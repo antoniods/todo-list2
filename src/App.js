@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import uuid from "uuid";
+import { v4 as uuidv4 } from "uuid";
+
 import TodoInput from "./components/TodoInput";
 import TodoList from "./components/TodoList";
 class App extends Component {
   state = {
     items: [],
-    id: uuid(),
+    id: uuidv4(),
     item: "",
     editItem: false,
   };
@@ -25,7 +26,7 @@ class App extends Component {
     this.setState({
       items: updatedItems,
       item: "",
-      id: uuid(),
+      id: uuidv4(),
       editItem: false,
     });
   };
